@@ -27,9 +27,11 @@
     <style>
       .center {
     margin: auto;
-    width: 100%;
+    width: 200px;
+    text-align:center;
     padding: 10px;
     padding-top:100px;
+    
 }
     </style>
   </head>
@@ -40,4 +42,15 @@
     </div>
    
   </body>
+    <script>
+      
+        var elem =document.getElementById("time");
+        var now = moment();
+        var event = moment("201605271700","YYYYMMDDhhmm");
+        var d =moment.duration(event.diff(now));
+        
+        elem.innerHTML = "#"+d.hours()+"timer"+d.minutes()+"minutter"+d.seconds()+"sekunder";
+      }
+      
+    </script>
 </html>
