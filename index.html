@@ -20,7 +20,7 @@
         var event = moment("201605271700","YYYYMMDDhhmm");
         var d =moment.duration(event.diff(now));
         
-        elem.innerHTML = "#"+d.hours()+d.minutes()+d.seconds();
+        elem.innerHTML = "#"+d.hours()+"timer"+d.minutes()+"minutter"+d.seconds()+"sekunder";
       }, 1000)
       
     </script>
