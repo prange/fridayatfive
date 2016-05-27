@@ -17,7 +17,7 @@
       setInterval(function(){
         var elem =document.getElementById("time");
         var now = moment();
-        var event = moment("201605271700","YYYYMMDDhhmm"
+        var event = moment("201605271700","YYYYMMDDhhmm");
         elem.innerHTML = "#"+now.diff(event,'hours')+now.diff(event,'minutes')+now.diff(event,'seconds');
       }, 1000)
       
