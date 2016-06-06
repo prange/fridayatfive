@@ -224,7 +224,9 @@ body {
       elem.innerHTML = "#"+d.days()+":"+d.hours()+":"+d.minutes()+":"+d.seconds();
       
       setInterval(function(){
+        var elem =document.getElementById("time");
         var now = moment();
+        var event = moment("201606101800","YYYYMMDDhhmm");
         var d =moment.duration(event.diff(now));
         
         elem.innerHTML = "#"+d.days()+":"+d.hours()+":"+d.minutes()+":"+d.seconds();
