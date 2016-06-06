@@ -218,10 +218,10 @@ body {
       
         var elem =document.getElementById("time");
         var now = moment();
-        var event = moment("201605271700","YYYYMMDDhhmm");
+        var event = moment("201606101800","YYYYMMDDhhmm");
         var d =moment.duration(event.diff(now));
         
-        elem.innerHTML = "#"+d.hours()+"timer"+d.minutes()+"minutter"+d.seconds()+"sekunder";
+        elem.innerHTML = "#"+d.days()+":"+d.hours()+":"+d.minutes()+":"+d.seconds();
       
       setInterval(function(){
         var elem =document.getElementById("time");
