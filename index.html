@@ -148,21 +148,22 @@ body {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
      <script>
+      function pad(value, length) {
+        return (value.toString().length < length) ? pad("0"+value, length-1):value.toString();
+      }
       
-      var elem =document.getElementById("time");
-      var now = moment();
-      var event = moment("201606101800","YYYYMMDDhhmm");
-      var d =moment.duration(event.diff(now));
-        
-      elem.innerHTML = "#"+d.days()+":"+d.hours()+":"+d.minutes()+":"+d.seconds();
-      
-      setInterval(function(){
-        var elem =document.getElementById("time");
+      function printTime(){
         var now = moment();
         var event = moment("201606101800","YYYYMMDDhhmm");
-        var d =moment.duration(event.diff(now));
-        
-        elem.innerHTML = "#"+d.days()+":"+d.hours()+":"+d.minutes()+":"+d.seconds();
+        return "#"+pad(d.days(),2)+":"+pad(d.hours(),2)+":"+pad(d.minutes(),2)+":"+pad(d.seconds(),2);
+      }
+      
+      var elem =document.getElementById("time");
+      
+      elem.innerHTML = printTime();
+      
+      setInterval(function(){
+        elem.innerHTML = printTime();
       }, 1000)
       
     </script>
