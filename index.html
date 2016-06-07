@@ -155,6 +155,7 @@ body {
       function printTime(){
         var now = moment();
         var event = moment("201606101800","YYYYMMDDhhmm");
+        var d =moment.duration(event.diff(now));
         return "#"+pad(d.days(),2)+":"+pad(d.hours(),2)+":"+pad(d.minutes(),2)+":"+pad(d.seconds(),2);
       }
       
